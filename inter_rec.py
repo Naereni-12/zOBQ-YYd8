@@ -29,10 +29,10 @@ def recoder():
             print("Обработка записи")
             try:
                 user_audio = r.recognize_google(raw_audio, language='ru')
+                return user_audio
             except sr.UnknownValueError:
                 print('\nОшибка распознования: скорее всего слишком тихо\n')
                 main()
-            return user_audio
     except OSError:
         print("\nНе подключен микрофон\n")
         main()
